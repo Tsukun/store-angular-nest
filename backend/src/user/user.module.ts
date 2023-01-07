@@ -16,5 +16,6 @@ import { Module } from "@nestjs/common";
   ],
   controllers: [UserController],
   providers: [UserService, TokenService, MailService],
+  exports: [TokenService],
 })
 export class UserModule {}

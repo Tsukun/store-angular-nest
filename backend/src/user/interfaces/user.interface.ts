@@ -13,3 +13,11 @@ export interface PayloadUserI {
   id: string;
   isActivated: boolean;
 }
+
+export interface UserJwtPayload {
+  email: string;
+  id: string;
+  isActivated: boolean;
+  iat: number;
+  exp: number;
+}

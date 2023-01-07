@@ -1,29 +1,15 @@
-import { Injectable, NestMiddleware } from "@nestjs/common";
-import { NextFunction } from "express";
+import { TokenService } from "./../user/token.service";
+import { Injectable, NestMiddleware, Next, Req, Res } from "@nestjs/common";
 import ApiError from "../exceptions/api-error";
-export default function (req: any, res: any, next: any) {
-  try {
-    const authorizationHeader = req.header.authorizationHeader;
-    if (!authorizationHeader) {
-      return next(ApiError.UnauthorizedError());
-    }
-    const accessToken = authorizationHeader.split(" ")[1];
-    if (accessToken) {
-      return next(ApiError.UnauthorizedError());
-    }
-
-    //const userData = new Token
-  } catch (e) {
-    return next(ApiError.UnauthorizedError());
-  }
-}
 
 @Injectable()
 export class LoggerMiddleware implements NestMiddleware {
-  use(req: Request, res: Response, next: NextFunction) {
+  constructor(private readonly tokenService: TokenService) {}
+
+  use(@Req() req, @Res() res, @Next() next) {
     try {
-      const authorizationHeader = req.headers.values()["authorization"];
-      console.log(authorizationHeader);
+      const authorizationHeader = req.headers.authorization;
+
       if (!authorizationHeader) {
         return next(ApiError.UnauthorizedError());
       }
@@ -32,7 +18,15 @@ export class LoggerMiddleware implements NestMiddleware {
         return next(ApiError.UnauthorizedError());
       }
 
-      //const userData = new Token
+      const userData = this.tokenService.validateAccessToken(accessToken);
+      console.log("userData ", userData);
+      if (!userData) {
+        return next(ApiError.UnauthorizedError());
+      }
+
+      req.user = userData;
+
+      next();
     } catch (e) {
       return next(ApiError.UnauthorizedError());
     }

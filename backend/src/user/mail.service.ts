@@ -1,5 +1,7 @@
-const nodemailer = require("nodemailer");
+import { Injectable } from "@nestjs/common";
 
+const nodemailer = require("nodemailer");
+@Injectable()
 export class MailService {
   transporter: any;
   constructor() {
