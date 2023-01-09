@@ -8,6 +8,7 @@ import { MainComponent } from './main/main.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './footer/footer.component';
+import { ShowcaseItemComponent } from './showcase-item/showcase-item.component';
 
 @NgModule({
   declarations: [
@@ -15,14 +16,11 @@ import { FooterComponent } from './footer/footer.component';
     AuthComponent,
     MainComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ShowcaseItemComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

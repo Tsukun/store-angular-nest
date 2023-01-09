@@ -1,1 +1,29 @@
-<p>main works!</p>
+<div class="main-container">
+  <div class="item-poster">
+    <img class="image-big" src="../../assets/posters/cat1.jpg" />
+  </div>
+  <div class="item-poster">
+    <img class="image-small" src="../../assets/posters/cat2.jpg" />
+  </div>
+  <div class="item-poster">
+    <img class="image-small" src="../../assets/posters/cat4.jpg" />
+  </div>
+  <div class="item-poster">
+    <img class="image-small" src="../../assets/posters/cat3.jpg" />
+  </div>
+  <div class="delimiter-line"></div>
+  <div class="item-button">
+    <button class="filter-button">Новинки</button>
+    <button class="filter-button">Популярное</button>
+    <button class="filter-button">Рекомендуем</button>
+  </div>
+  <div class="showcase-container">
+    <app-showcase-item
+      *ngFor="let item of items"
+      [imagePath]="'../../assets/showcase/cat1.jpg'"
+      [productName]="'Кот который удивленно смотрит'"
+      [productPrice]="1000"
+    ></app-showcase-item>
+  </div>
+  <div class="delimiter-line"></div>
+</div>
