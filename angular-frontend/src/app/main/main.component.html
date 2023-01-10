@@ -19,11 +19,22 @@
   </div>
   <div class="showcase-container">
     <app-showcase-item
-      *ngFor="let item of items"
-      [imagePath]="'../../assets/showcase/cat1.jpg'"
-      [productName]="'Кот который удивленно смотрит'"
-      [productPrice]="1000"
+      *ngFor="let item of productsShowcase"
+      [imagePath]="item.imagePath"
+      [productName]="item.productName"
+      [productPrice]="item.productPrice"
     ></app-showcase-item>
   </div>
   <div class="delimiter-line"></div>
+  <div class="news-header">Новости</div>
+  <div class="showcase-container">
+    <app-news-item
+      *ngFor="let item of newsShowcase"
+      [imagePath]="item.imagePath"
+      [newsHeader]="item.newsHeader"
+      [newsContent]="item.newsContent"
+      [newsDate]="item.newsDate"
+    >
+    </app-news-item>
+  </div>
 </div>

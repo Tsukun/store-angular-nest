@@ -1,5 +1,16 @@
 import { Component } from '@angular/core';
+interface Product {
+  imagePath: string;
+  productName: string;
+  productPrice: number;
+}
 
+interface News {
+  imagePath: string;
+  newsHeader: string;
+  newsContent: string;
+  newsDate: string;
+}
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -7,4 +18,54 @@ import { Component } from '@angular/core';
 })
 export class MainComponent {
   items = ['Tom', 'Bob', 'Sam', 'Bill'];
+
+  productsShowcase: Product[] = [
+    {
+      imagePath: '../../assets/showcase/cat1.jpg',
+      productName: 'Кот который удивленно смотрит1',
+      productPrice: 1000,
+    },
+    {
+      imagePath: '../../assets/showcase/cat1.jpg',
+      productName: 'Кот который удивленно смотрит2',
+      productPrice: 2000,
+    },
+    {
+      imagePath: '../../assets/showcase/cat1.jpg',
+      productName: 'Кот который удивленно смотрит3',
+      productPrice: 3000,
+    },
+    {
+      imagePath: '../../assets/showcase/cat1.jpg',
+      productName: 'Кот который удивленно смотрит4',
+      productPrice: 4000,
+    },
+  ];
+
+  newsShowcase: News[] = [
+    {
+      imagePath: '../../assets/showcase/cat1.jpg',
+      newsHeader: 'Новость',
+      newsContent: 'Содержание новости',
+      newsDate: '01.01.2023',
+    },
+    {
+      imagePath: '../../assets/showcase/cat1.jpg',
+      newsHeader: 'Новость',
+      newsContent: 'Содержание новости',
+      newsDate: '01.01.2023',
+    },
+    {
+      imagePath: '../../assets/showcase/cat1.jpg',
+      newsHeader: 'Новость',
+      newsContent: 'Содержание новости',
+      newsDate: '01.01.2023',
+    },
+    {
+      imagePath: '../../assets/showcase/cat1.jpg',
+      newsHeader: 'Новость',
+      newsContent: 'Содержание новости',
+      newsDate: '01.01.2023',
+    },
+  ];
 }

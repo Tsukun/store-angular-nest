@@ -8,8 +8,10 @@ import { MainComponent } from './main/main.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './footer/footer.component';
-import { ShowcaseItemComponent } from './showcase-item/showcase-item.component';
+import { ShowcaseItemComponent } from './elements/showcase-item/showcase-item.component';
 import { ScrollDirective } from './scroll.directive';
+import { NewsItemComponent } from './elements/news-item/news-item.component';
+import { SecondNavbarComponent } from './second-navbar/second-navbar.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { ScrollDirective } from './scroll.directive';
     FooterComponent,
     ShowcaseItemComponent,
     ScrollDirective,
+    NewsItemComponent,
+    SecondNavbarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
