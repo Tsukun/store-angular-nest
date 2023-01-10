@@ -22,22 +22,22 @@ export class MainComponent {
   productsShowcase: Product[] = [
     {
       imagePath: '../../assets/showcase/phone1.jpg',
-      productName: 'Кот который удивленно смотрит1',
+      productName: 'Телефон телефон телефон',
       productPrice: 1000,
     },
     {
       imagePath: '../../assets/showcase/phone1.jpg',
-      productName: 'Кот который удивленно смотрит2',
+      productName: 'Телефон телефон телефон',
       productPrice: 2000,
     },
     {
       imagePath: '../../assets/showcase/phone1.jpg',
-      productName: 'Кот который удивленно смотрит3',
+      productName: 'Телефон телефон телефон',
       productPrice: 3000,
     },
     {
       imagePath: '../../assets/showcase/phone1.jpg',
-      productName: 'Кот который удивленно смотрит4',
+      productName: 'Телефон телефон телефон',
       productPrice: 4000,
     },
   ];
