@@ -1,46 +1,48 @@
 
 .main-container
     display: grid
-    max-width: 63vw
+    width: 100%
     row-gap: 10px
     column-gap: 10px
     margin-top: 80px
     margin-left: auto
     margin-right: auto  
-    grid-template-columns: repeat(auto-fill, 1fr)
+    grid-template-columns: 3.8fr 1fr 1fr 3.8fr
     grid-template-rows: repeat(auto-fill, auto)
 
 
 .item-poster
     color: #580000
     &:nth-of-type(1)
-        grid-column: 1/4
+        grid-column: 1/5
         text-align: center 
 
     &:nth-of-type(2)
         text-align: end
 
     &:nth-of-type(3)
-        text-align: start
+        grid-column: 2/4
+        text-align: center
 
     &:nth-of-type(4)
         text-align: start
 .image-big
-    width: 1220px
+    width: 64vw
     height: 500px
     border: solid 1px #79787883
     border-radius: 5px 5px 
 
 .image-small
-    width: 400px
+    width: 21vw
     height: 250px
     border: solid 1px #79787883
     border-radius: 5px 5px 
+
 .item-button
     margin-top: 20px
     margin-bottom: 15px 
     text-align: center
-    grid-column: 1/4
+    grid-column: 1/5
 
 
 .filter-button
@@ -58,21 +60,21 @@
     &:hover
         background: #e7e7e7
 .delimiter-line
-     grid-column: 1/4
-     width: 100%
-     border-top: 1px solid #c2c2c2
+    grid-column: 1/5
+    width: 100%
+    border-top: 1px solid #c2c2c2
 
 .showcase-container
-    display: grid
-    grid-column: 1/4
-    text-align: center
-    grid-template-columns: repeat(4, auto)
-    margin-bottom: 40px
+    display: flex
+    grid-column: 1/5
+    flex-direction: row
+    justify-content: center
+    
 
 .news-header
+    grid-column: 1/5
     margin-top: 40px
     margin-bottom: 30px        
-    grid-column: 1/4
     font-weight: 500
     font-size: 28px
     text-align: center

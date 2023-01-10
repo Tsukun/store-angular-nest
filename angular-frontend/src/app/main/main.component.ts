@@ -21,22 +21,22 @@ export class MainComponent {
 
   productsShowcase: Product[] = [
     {
-      imagePath: '../../assets/showcase/cat1.jpg',
+      imagePath: '../../assets/showcase/phone1.jpg',
       productName: 'Кот который удивленно смотрит1',
       productPrice: 1000,
     },
     {
-      imagePath: '../../assets/showcase/cat1.jpg',
+      imagePath: '../../assets/showcase/phone1.jpg',
       productName: 'Кот который удивленно смотрит2',
       productPrice: 2000,
     },
     {
-      imagePath: '../../assets/showcase/cat1.jpg',
+      imagePath: '../../assets/showcase/phone1.jpg',
       productName: 'Кот который удивленно смотрит3',
       productPrice: 3000,
     },
     {
-      imagePath: '../../assets/showcase/cat1.jpg',
+      imagePath: '../../assets/showcase/phone1.jpg',
       productName: 'Кот который удивленно смотрит4',
       productPrice: 4000,
     },
@@ -44,25 +44,25 @@ export class MainComponent {
 
   newsShowcase: News[] = [
     {
-      imagePath: '../../assets/showcase/cat1.jpg',
+      imagePath: '../../assets/news/news1.jpg',
       newsHeader: 'Новость',
       newsContent: 'Содержание новости',
       newsDate: '01.01.2023',
     },
     {
-      imagePath: '../../assets/showcase/cat1.jpg',
+      imagePath: '../../assets/news/news1.jpg',
       newsHeader: 'Новость',
       newsContent: 'Содержание новости',
       newsDate: '01.01.2023',
     },
     {
-      imagePath: '../../assets/showcase/cat1.jpg',
+      imagePath: '../../assets/news/news1.jpg',
       newsHeader: 'Новость',
       newsContent: 'Содержание новости',
       newsDate: '01.01.2023',
     },
     {
-      imagePath: '../../assets/showcase/cat1.jpg',
+      imagePath: '../../assets/news/news1.jpg',
       newsHeader: 'Новость',
       newsContent: 'Содержание новости',
       newsDate: '01.01.2023',
