@@ -1,7 +1,8 @@
+<app-auth *ngIf="display" [(display)]="display"></app-auth>
 <div class="second-navbar-container">
   <div class="auth">
-    <a class="auth-item" href="main">Вход</a>
+    <a class="auth-item" (click)="onPress()">Вход</a>
     <p>или</p>
-    <a class="auth-item" href="contact">Регистрация</a>
+    <a class="auth-item" (click)="onPress()">Регистрация</a>
   </div>
 </div>

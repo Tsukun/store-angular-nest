@@ -1,3 +1,20 @@
-<div>
-  <p>auth works!</p>
+<div class="modal-wrapper" *ngIf="display">
+  <div class="auth-container">
+    <p class="auth-item auth-head">Аутенфикация</p>
+    <input class="input-text" placeholder="Email" name="email" #email />
+    <input
+      class="input-text"
+      placeholder="Пароль"
+      type="password"
+      name="password"
+      #password
+    />
+    <button
+      class="auth-item auth-button"
+      (click)="login(email.value, password.value)"
+    >
+      Вход
+    </button>
+  </div>
+  <div class="auth-overlay" (click)="onPress()"></div>
 </div>

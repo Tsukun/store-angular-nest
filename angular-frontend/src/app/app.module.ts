@@ -1,3 +1,4 @@
+import { authReducerInternal } from './store/auth/auth.reducer';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -12,6 +13,10 @@ import { ShowcaseItemComponent } from './elements/showcase-item/showcase-item.co
 import { ScrollDirective } from './scroll.directive';
 import { NewsItemComponent } from './elements/news-item/news-item.component';
 import { SecondNavbarComponent } from './second-navbar/second-navbar.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './auth/auth.service';
+import { StoreModule } from '@ngrx/store';
+import { httpInterceptorProvider } from './http-interceptors';
 
 @NgModule({
   declarations: [
@@ -25,8 +30,14 @@ import { SecondNavbarComponent } from './second-navbar/second-navbar.component';
     NewsItemComponent,
     SecondNavbarComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    StoreModule.forRoot({ auth: authReducerInternal }, {}),
+  ],
+  providers: [AuthService, httpInterceptorProvider],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
