@@ -14,12 +14,12 @@ const initialState: AuthPayload = {
   isAuth: false,
 };
 
-export const authReducerInternal = createReducer(
+export const authReducer = createReducer(
   initialState,
-  on(AuthActions.login, (state) => ({
+  on(AuthActions.loginUser, (state, { email, role }) => ({
     ...state,
-    email: state.email,
-    role: state.role,
+    email: email,
+    role: role,
     isAuth: true,
   }))
 );

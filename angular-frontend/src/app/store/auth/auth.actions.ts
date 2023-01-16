@@ -4,12 +4,11 @@ interface IUser {
   email: string;
   role: string;
   isAuth: boolean;
-  id: string;
 }
 
 export const AuthActions = createActionGroup({
   source: 'Authentication',
   events: {
-    login: props<IUser>(),
+    'Login User': props<IUser>(),
   },
 });

@@ -34,7 +34,7 @@ export class AuthService {
       .subscribe((data: AuthResponse) => {
         localStorage.setItem('token', data.refreshToken);
         console.log(data.refreshToken);
-        this.store.dispatch(AuthActions.login(data.user));
+        this.store.dispatch(AuthActions.loginUser(data.user));
       });
   }
 

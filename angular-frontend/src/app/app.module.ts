@@ -1,5 +1,5 @@
-import { authReducerInternal } from './store/auth/auth.reducer';
-import { NgModule } from '@angular/core';
+import { authReducer } from './store/auth/auth.reducer';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './auth/auth.service';
 import { StoreModule } from '@ngrx/store';
 import { httpInterceptorProvider } from './http-interceptors';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { httpInterceptorProvider } from './http-interceptors';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    StoreModule.forRoot({ auth: authReducerInternal }, {}),
+    StoreModule.forRoot({ auth: authReducer }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   ],
   providers: [AuthService, httpInterceptorProvider],
   bootstrap: [AppComponent],

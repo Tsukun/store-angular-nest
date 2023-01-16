@@ -43,7 +43,12 @@ export class AuthInterceptor implements HttpInterceptor {
       catchError((error: HttpErrorResponse) => {
         console.log(req.headers.keys());
         if (error.status == 401) {
-          this.http.get(this.refreshdUrl);
+          this.http
+            .get<AuthResponse>(this.refreshdUrl)
+            .subscribe((data: AuthResponse) => {
+              localStorage.setItem('token', data.accessToken);
+              console.log('accessToken ', data.accessToken);
+            });
         }
         throw error;
       })

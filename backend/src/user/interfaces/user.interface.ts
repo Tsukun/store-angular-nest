@@ -4,6 +4,7 @@ export interface TokenI {
 }
 export interface UserI {
   email: string;
+  role: string;
   _id: string;
   isActivated: boolean;
 }
