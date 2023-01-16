@@ -1,3 +1,13 @@
-import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { createSelector, createFeatureSelector } from '@ngrx/store';
 
-export const selectAuth = createFeatureSelector('auth');
+interface AuthPayload {
+  email: string;
+  role: string;
+  isAuth: boolean;
+}
+const selectUsers = createFeatureSelector<AuthPayload>('auth');
+
+export const selectIUser = createSelector(
+  selectUsers,
+  (state: AuthPayload) => state
+);

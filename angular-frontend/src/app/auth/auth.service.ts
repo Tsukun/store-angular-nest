@@ -1,7 +1,9 @@
+import { selectIUser } from './../store/auth/index';
 import { AuthActions } from './../store/auth/auth.actions';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
+
 export interface IUser {
   email: string;
   role: string;
@@ -35,6 +37,7 @@ export class AuthService {
         localStorage.setItem('token', data.refreshToken);
         console.log(data.refreshToken);
         this.store.dispatch(AuthActions.loginUser(data.user));
+        console.log('login selector ', this.store.select(selectIUser));
       });
   }
 

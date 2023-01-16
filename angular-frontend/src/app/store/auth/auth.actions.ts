@@ -7,7 +7,7 @@ interface IUser {
 }
 
 export const AuthActions = createActionGroup({
-  source: 'Authentication',
+  source: 'Auth api',
   events: {
     'Login User': props<IUser>(),
   },
